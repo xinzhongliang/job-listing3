@@ -1,3 +1,4 @@
+
 <div class="pull-right">
   <%= link_to("Add a job", new_admin_job_path, :class => "btn btn-default")%>
 </div>
@@ -7,7 +8,8 @@
 <table class="table table-boldered">
   <% @jobs.each do |job|%>
   <tr>
-    <td>
+      <td>
+        <%= render_job_status(job)%>
       <%= link_to(job.title, admin_job_path(job))%>
     </td>
     <td>
